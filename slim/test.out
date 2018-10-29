@@ -1,0 +1,16 @@
+WARNING:tensorflow:From test_image_classifier.py:64: get_or_create_global_step (from tensorflow.contrib.framework.python.ops.variables) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.get_or_create_global_step
+INFO:tensorflow:Scale of 0 disables regularizer.
+2018-10-27 16:59:20.727840: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2018-10-27 16:59:21.822372: E tensorflow/stream_executor/cuda/cuda_driver.cc:300] failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+2018-10-27 16:59:21.822413: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:163] retrieving CUDA diagnostic information for host: qiming2
+2018-10-27 16:59:21.822419: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:170] hostname: qiming2
+2018-10-27 16:59:21.822446: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:194] libcuda reported version is: 384.130.0
+2018-10-27 16:59:21.822466: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:198] kernel reported version is: 384.130.0
+2018-10-27 16:59:21.822471: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:305] kernel version seems to match DSO: 384.130.0
+INFO:tensorflow:Restoring parameters from /home/yy/PreResearch/card_matching-master/slim/mobilenet_v1_train_logs/early_stop_3600/model.ckpt-18000
+banana/IMG_0208.JPG apple banana
+alligator/IMG_9309.JPG accessory alligator
+baby/P80921-115305.jpg apple baby
+Accuracy:  0.842105263158  Corrct: 16  Total:  19

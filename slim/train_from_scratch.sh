@@ -1,0 +1,14 @@
+nohup python train_image_classifier.py \
+				--train_dir=train_from_scratch \
+				--dataset_dir=/home/lifeng/tensorflow/models/research/slim/tf_record/train \
+				--num_samples=970 \
+				--num_classes=91 \
+				--model_name=mobilenet_v1 \
+                --max_number_of_steps=300000 \
+                --batch_size=32 \
+                --learning_rate=0.01 \
+                --learning_rate_decay_type=exponential \
+                --save_interval_secs=600 \
+                --save_summaries_secs=600 \
+                --log_every_n_steps=1000 \
+                --optimizer=sgd &

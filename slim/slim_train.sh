@@ -1,0 +1,16 @@
+nohup python train_image_classifier.py \
+				--train_dir=train_logs \
+				--dataset_dir=/home/lifeng/tensorflow/models/research/slim/tf_record/train \
+				--num_samples=970 \
+				--num_classes=91 \
+				--model_name=inception_v3 \
+				--checkpoint_path=/home/lifeng/TFmodels/inception-v3/inception_v3.ckpt \
+				--checkpoint_exclude_scopes=InceptionV3/Logits,InceptionV3/AuxLogit \
+                --max_number_of_steps=50000 \
+                --batch_size=32 \
+                --learning_rate=0.01 \
+                --learning_rate_decay_type=exponential \
+                --save_interval_secs=600 \
+                --save_summaries_secs=600 \
+                --log_every_n_steps=1000 \
+                --optimizer=adam > nohup_mobilenet_v1.out 2>&1 &

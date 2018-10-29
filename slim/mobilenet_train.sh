@@ -1,0 +1,17 @@
+CUDA_VISIBLE_DEVICES=1 python2 train_image_classifier.py \
+				--train_dir=mobilenet_v1_train_logs/early_stop_3600 \
+				--dataset_dir=/home/yy/PreResearch/card_matching-master/slim/data/tf_record_3600/train/ \
+				--num_samples=175 \
+				--num_classes=10 \
+                --num_readers=5 \
+				--model_name=mobilenet_v1 \
+				--checkpoint_path=/home/yy/PreResearch/TFmodels/mobilenet_v1/mobilenet_v1_1.0_224.ckpt \
+				--checkpoint_exclude_scopes=MobilenetV1/Logits/Conv2d_1c_1x1 \
+                --max_number_of_steps=18000 \
+                --batch_size=32 \
+                --learning_rate=0.01 \
+                --learning_rate_decay_type=exponential \
+                --save_interval_secs=600 \
+                --save_summaries_secs=600 \
+                --log_every_n_steps=1000 \
+                --optimizer=adam  > nohup_mobilenet_v1.out 2>&1 &

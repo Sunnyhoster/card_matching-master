@@ -1,0 +1,10 @@
+sklearn
+imutils
+tensorflow
+tensorflow-gpu
+numpy<=1.14.
+scipy
+scikit-image
+opencv-python
+nets
+preprocessing
