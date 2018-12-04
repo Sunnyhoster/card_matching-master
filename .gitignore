@@ -1,0 +1,4 @@
+slim/nets/
+*.pyc
+*.swp
+

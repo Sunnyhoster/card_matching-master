@@ -25,15 +25,87 @@ from datasets import dataset_card
 from deployment import model_deploy
 from nets import nets_factory
 from preprocessing import preprocessing_factory
+import os
+
 
 slim = tf.contrib.slim
+
+print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaa")
+
+## Dataset Flags ##
+tf.app.flags.DEFINE_string(
+    'dataset_dir', 'data/tf_record_3600/train', 'The directory where the dataset files are stored.')
+
+tf.app.flags.DEFINE_integer(
+    'num_samples', 2592, 'Number of samples.')
+tf.app.flags.DEFINE_integer(
+    'num_classes', 189, 'Number of classes.')
+
+tf.app.flags.DEFINE_string(
+    'train_dir', 'mobilenet_v2_train_logs/model',
+    'Directory where checkpoints and event logs are written to.')
+
+# Optimization Flags #
+tf.app.flags.DEFINE_float(
+    'weight_decay', 0.00004, 'The weight decay on the model weights.')
+
+tf.app.flags.DEFINE_string(
+    'optimizer', 'adam',
+    'The name of the optimizer, one of "adadelta", "adagrad", "adam",'
+    '"ftrl", "momentum", "sgd" or "rmsprop".')
+
+# Learning Rate Flags #
+tf.app.flags.DEFINE_string(
+    'learning_rate_decay_type',
+    'exponential',
+    'Specifies how the learning rate is decayed. One of "fixed", "exponential",'
+    ' or "polynomial"')
+
+tf.app.flags.DEFINE_float('learning_rate', 0.0001, 'Initial learning rate.')
+
+#Fine-Tuning Flags #
+tf.app.flags.DEFINE_string(
+    'checkpoint_path', 'mobilenet_v2_1.0_224/mobilenet_v2_1.0_224.ckpt' ,          # mobilenet_v2_1.0_224/mobilenet_v2_1.0_224.ckpt
+    'The path to a checkpoint from which to fine-tune.')
+
+tf.app.flags.DEFINE_string(
+    'checkpoint_exclude_scopes', "MobilenetV2/Logits,MobilenetV2/AuxLogits", # MobilenetV2/Logits,MobilenetV2/AuxLogits,
+    'Comma-separated list of scopes of variables to exclude when restoring '
+    'from a checkpoint.')
+
+tf.app.flags.DEFINE_integer(
+    'train_image_size', 224, 'Train image size')
+
+tf.app.flags.DEFINE_integer(
+    'batch_size', 64, 'The number of samples in each batch.')
+
+tf.app.flags.DEFINE_integer('max_number_of_steps', 5000,
+                            'The maximum number of training steps.')
+
+tf.app.flags.DEFINE_string(
+    'model_name', 'mobilenet_v2', 'The name of the architecture to train.')
+
+tf.app.flags.DEFINE_integer(
+    'log_every_n_steps', 40,
+    'The frequency with which logs are print.')
+
+tf.app.flags.DEFINE_integer(
+    'save_summaries_secs', 600,
+    'The frequency with which summaries are saved, in seconds.')
+
+tf.app.flags.DEFINE_integer(
+    'save_interval_secs', 600,
+    'The frequency with which the model is saved, in seconds.')
+
+
+
+
+
+
 
 tf.app.flags.DEFINE_string(
     'master', '', 'The address of the TensorFlow master to use.')
 
-tf.app.flags.DEFINE_string(
-    'train_dir', '/tmp/tfmodel/',
-    'Directory where checkpoints and event logs are written to.')
 
 tf.app.flags.DEFINE_integer('num_clones', 1,
                             'Number of model clones to deploy. Note For '
@@ -41,7 +113,7 @@ tf.app.flags.DEFINE_integer('num_clones', 1,
                             'out and learning rate decay happen per clone '
                             'epochs')
 
-tf.app.flags.DEFINE_boolean('clone_on_cpu', False,
+tf.app.flags.DEFINE_boolean('clone_on_cpu', True, 
                             'Use CPUs to deploy clones.')
 
 tf.app.flags.DEFINE_integer('worker_replicas', 1, 'Number of worker replicas.')
@@ -60,32 +132,11 @@ tf.app.flags.DEFINE_integer(
     'The number of threads used to create the batches.')
 
 tf.app.flags.DEFINE_integer(
-    'log_every_n_steps', 10,
-    'The frequency with which logs are print.')
-
-tf.app.flags.DEFINE_integer(
-    'save_summaries_secs', 600,
-    'The frequency with which summaries are saved, in seconds.')
-
-tf.app.flags.DEFINE_integer(
-    'save_interval_secs', 600,
-    'The frequency with which the model is saved, in seconds.')
-
-tf.app.flags.DEFINE_integer(
     'task', 0, 'Task id of the replica running the training.')
 
 ######################
 # Optimization Flags #
 ######################
-
-tf.app.flags.DEFINE_float(
-    'weight_decay', 0.00004, 'The weight decay on the model weights.')
-
-tf.app.flags.DEFINE_string(
-    'optimizer', 'rmsprop',
-    'The name of the optimizer, one of "adadelta", "adagrad", "adam",'
-    '"ftrl", "momentum", "sgd" or "rmsprop".')
-
 tf.app.flags.DEFINE_float(
     'adadelta_rho', 0.95,
     'The decay rate for adadelta.')
@@ -133,17 +184,8 @@ tf.app.flags.DEFINE_integer(
 #######################
 # Learning Rate Flags #
 #######################
-
-tf.app.flags.DEFINE_string(
-    'learning_rate_decay_type',
-    'exponential',
-    'Specifies how the learning rate is decayed. One of "fixed", "exponential",'
-    ' or "polynomial"')
-
-tf.app.flags.DEFINE_float('learning_rate', 0.01, 'Initial learning rate.')
-
 tf.app.flags.DEFINE_float(
-    'end_learning_rate', 0.0001,
+    'end_learning_rate', 0.00001,
     'The minimal end learning rate used by a polynomial decay learning rate.')
 
 tf.app.flags.DEFINE_float(
@@ -175,20 +217,11 @@ tf.app.flags.DEFINE_float(
 #######################
 # Dataset Flags #
 #######################
-
 tf.app.flags.DEFINE_string(
     'dataset_name', 'imagenet', 'The name of the dataset to load.')
 
 tf.app.flags.DEFINE_string(
     'dataset_split_name', 'train', 'The name of the train/test split.')
-
-tf.app.flags.DEFINE_string(
-    'dataset_dir', None, 'The directory where the dataset files are stored.')
-
-tf.app.flags.DEFINE_integer(
-    'num_samples', 970, 'Number of samples.')
-tf.app.flags.DEFINE_integer(
-    'num_classes', 91, 'Number of classes.')
 
 tf.app.flags.DEFINE_integer(
     'labels_offset', 0,
@@ -197,45 +230,23 @@ tf.app.flags.DEFINE_integer(
     'class for the ImageNet dataset.')
 
 tf.app.flags.DEFINE_string(
-    'model_name', 'inception_v3', 'The name of the architecture to train.')
-
-tf.app.flags.DEFINE_string(
     'preprocessing_name', None, 'The name of the preprocessing to use. If left '
     'as `None`, then the model_name flag is used.')
-
-tf.app.flags.DEFINE_integer(
-    'batch_size', 32, 'The number of samples in each batch.')
-
-tf.app.flags.DEFINE_integer(
-    'train_image_size', None, 'Train image size')
-
-tf.app.flags.DEFINE_integer('max_number_of_steps', None,
-                            'The maximum number of training steps.')
 
 #####################
 # Fine-Tuning Flags #
 #####################
-
 tf.app.flags.DEFINE_string(
-    'checkpoint_path', None,
-    'The path to a checkpoint from which to fine-tune.')
-
-tf.app.flags.DEFINE_string(
-    'checkpoint_exclude_scopes',"MobilenetV2/Logits,MobilenetV2/AuxLogits",# None,
-    'Comma-separated list of scopes of variables to exclude when restoring '
-    'from a checkpoint.')
-
-tf.app.flags.DEFINE_string(
-    'trainable_scopes', None,
+    'trainable_scopes', None               ,# Mobilenet/Logits,Mobilenet/AuxLogits
     'Comma-separated list of scopes to filter the set of variables to train.'
     'By default, None would train all the variables.')
 
 tf.app.flags.DEFINE_boolean(
-    'ignore_missing_vars', False,
+    'ignore_missing_vars', False,          # False
     'When restoring a checkpoint would ignore missing variables.')
 
 FLAGS = tf.app.flags.FLAGS
-
+print(FLAGS.checkpoint_exclude_scopes)
 
 def _configure_learning_rate(num_samples_per_epoch, global_step):
   """Configures the learning rate.
@@ -379,7 +390,8 @@ def _get_init_fn():
   return slim.assign_from_checkpoint_fn(
       checkpoint_path,
       variables_to_restore,
-      ignore_missing_vars=FLAGS.ignore_missing_vars)
+      ignore_missing_vars=True)
+   #     ignore_missing_vars=FLAGS.ignore_missing_vars)
 
 
 def _get_variables_to_train():
@@ -401,11 +413,15 @@ def _get_variables_to_train():
 
 
 def main(_):
+  
+  config = tf.ConfigProto(allow_soft_placement=True)
+  gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.1)
+  config.gpu_options.allow_growth = True
+  sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
+
   if not FLAGS.dataset_dir:
     raise ValueError('You must supply the dataset directory with --dataset_dir')
-
   tf.logging.set_verbosity(tf.logging.INFO)
-
   with tf.Graph().as_default():
     #######################
     # Config model_deploy #
@@ -455,11 +471,15 @@ def main(_):
           common_queue_min=10 * FLAGS.batch_size)
       [image, label] = provider.get(['image', 'label'])
       label -= FLAGS.labels_offset
-
       train_image_size = FLAGS.train_image_size or network_fn.default_image_size
-
       image = image_preprocessing_fn(image, train_image_size, train_image_size)
-
+      '''
+      sess = tf.Session(config=config)
+      writer = tf.summary.FileWriter("./logs")
+      summary_op = tf.summary.image("image",tf.expand_dims(image,0))
+      summary = sess.run(summary_op)
+      writer.add_summary(summary)
+      '''
       images, labels = tf.train.batch(
           [image, label],
           batch_size=FLAGS.batch_size,
@@ -469,7 +489,6 @@ def main(_):
           labels, dataset.num_classes - FLAGS.labels_offset)
       batch_queue = slim.prefetch_queue.prefetch_queue(
           [images, labels], capacity=2 * deploy_config.num_clones)
-
     ####################
     # Define the model #
     ####################
@@ -581,11 +600,7 @@ def main(_):
     ###########################
     # Kicks off the training. #
     ###########################
-    session_config = tf.ConfigProto()
-    session_config.gpu_options.allow_growth = True
-
     slim.learning.train(
-        
         train_tensor,
         logdir=FLAGS.train_dir,
         master=FLAGS.master,
@@ -596,8 +611,7 @@ def main(_):
         log_every_n_steps=FLAGS.log_every_n_steps,
         save_summaries_secs=FLAGS.save_summaries_secs,
         save_interval_secs=FLAGS.save_interval_secs,
-        sync_optimizer=optimizer if FLAGS.sync_replicas else None,
-        session_config=session_config)
+        sync_optimizer=optimizer if FLAGS.sync_replicas else None)
 
 
 if __name__ == '__main__':

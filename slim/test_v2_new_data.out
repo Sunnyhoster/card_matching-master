@@ -1,0 +1,29 @@
+WARNING:tensorflow:From test_image_classifier.py:64: get_or_create_global_step (from tensorflow.contrib.framework.python.ops.variables) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.get_or_create_global_step
+INFO:tensorflow:Scale of 0 disables regularizer.
+2018-12-04 17:29:09.203512: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2018-12-04 17:29:09.334757: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:898] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2018-12-04 17:29:09.335067: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1212] Found device 0 with properties: 
+name: GeForce GTX 1080 Ti major: 6 minor: 1 memoryClockRate(GHz): 1.607
+pciBusID: 0000:02:00.0
+totalMemory: 10.91GiB freeMemory: 8.18GiB
+2018-12-04 17:29:09.335094: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
+2018-12-04 17:29:09.551819: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7908 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:02:00.0, compute capability: 6.1)
+INFO:tensorflow:Restoring parameters from /disk/private-data/yy/CardMatching/mobilenet_v2_train_logs_new_data/early_stop_3600/model.ckpt-20000
+Kneel/IMG_2612.jpg Stars Kneel
+Butterfly/IMG_1796.jpg kitten Butterfly
+thin/IMG_1731.jpg fat thin
+Cold/IMG_9015.JPG Ten Cold
+Lady/IMG_9541.jpg Animals Lady
+tasty/IMG_9448.jpg table tasty
+dirty/0033.jpg clean dirty
+sneaker/IMG_9436.jpg Coke sneaker
+deer/IMG_9442.jpg Cat deer
+Animals/IMG_1843.jpg Lady Animals
+dry/IMG_2908.jpg Pig dry
+scarves/IMG_9439.jpg Chair scarves
+giraffe/IMG_9441.jpg Cat giraffe
+Bee/IMG_1881.jpg Sour Bee
+Boy/IMG_9528.jpg pee Boy
+Accuracy:  0.9477351916376306  Corrct: 272  Total:  287

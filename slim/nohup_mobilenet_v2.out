@@ -1,0 +1,184 @@
+WARNING:tensorflow:From train_image_classifier.py:421: create_global_step (from tensorflow.contrib.framework.python.ops.variables) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.create_global_step
+WARNING:tensorflow:From /usr/local/share/py-venv/py2/local/lib/python2.7/site-packages/tensorflow/python/training/input.py:187: __init__ (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+WARNING:tensorflow:From /usr/local/share/py-venv/py2/local/lib/python2.7/site-packages/tensorflow/python/training/input.py:187: add_queue_runner (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+WARNING:tensorflow:From train_image_classifier.py:489: softmax_cross_entropy (from tensorflow.contrib.losses.python.losses.loss_ops) is deprecated and will be removed after 2016-12-30.
+Instructions for updating:
+Use tf.losses.softmax_cross_entropy instead. Note that the order of the logits and labels arguments has been changed.
+WARNING:tensorflow:From /usr/local/share/py-venv/py2/local/lib/python2.7/site-packages/tensorflow/contrib/losses/python/losses/loss_ops.py:398: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+WARNING:tensorflow:From /usr/local/share/py-venv/py2/local/lib/python2.7/site-packages/tensorflow/contrib/losses/python/losses/loss_ops.py:399: compute_weighted_loss (from tensorflow.contrib.losses.python.losses.loss_ops) is deprecated and will be removed after 2016-12-30.
+Instructions for updating:
+Use tf.losses.compute_weighted_loss instead.
+WARNING:tensorflow:From /usr/local/share/py-venv/py2/local/lib/python2.7/site-packages/tensorflow/contrib/losses/python/losses/loss_ops.py:147: add_loss (from tensorflow.contrib.losses.python.losses.loss_ops) is deprecated and will be removed after 2016-12-30.
+Instructions for updating:
+Use tf.losses.add_loss instead.
+INFO:tensorflow:Ignoring --checkpoint_path because a checkpoint already exists in mobilenet_v2_train_logs/early_stop_3600
+WARNING:tensorflow:From /usr/local/share/py-venv/py2/local/lib/python2.7/site-packages/tensorflow/contrib/slim/python/slim/learning.py:737: __init__ (from tensorflow.python.training.supervisor) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.MonitoredTrainingSession
+2018-11-20 21:28:27.928733: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2018-11-20 21:28:28.563562: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:964] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2018-11-20 21:28:28.564610: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1411] Found device 0 with properties: 
+name: GeForce GTX 1080 Ti major: 6 minor: 1 memoryClockRate(GHz): 1.607
+pciBusID: 0000:02:00.0
+totalMemory: 10.91GiB freeMemory: 10.54GiB
+2018-11-20 21:28:28.564626: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1490] Adding visible gpu devices: 0
+2018-11-20 21:28:28.767989: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] Device interconnect StreamExecutor with strength 1 edge matrix:
+2018-11-20 21:28:28.768014: I tensorflow/core/common_runtime/gpu/gpu_device.cc:977]      0 
+2018-11-20 21:28:28.768020: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990] 0:   N 
+2018-11-20 21:28:28.768213: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1103] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10190 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:02:00.0, compute capability: 6.1)
+INFO:tensorflow:Restoring parameters from mobilenet_v2_train_logs/early_stop_3600/model.ckpt-0
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+INFO:tensorflow:Starting Session.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Starting Queues.
+INFO:tensorflow:global_step/sec: 0
+INFO:tensorflow:Recording summary at step 2.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:global_step/sec: 0.776945
+INFO:tensorflow:Recording summary at step 466.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:global_step/sec: 0.776764
+INFO:tensorflow:Recording summary at step 933.
+INFO:tensorflow:global step 1000: loss = 0.4431 (1.318 sec/step)
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:global_step/sec: 0.759978
+INFO:tensorflow:Recording summary at step 1388.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:global_step/sec: 0.768301
+INFO:tensorflow:Recording summary at step 1849.
+INFO:tensorflow:global step 2000: loss = 0.3671 (1.359 sec/step)
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:global_step/sec: 0.755048
+INFO:tensorflow:Recording summary at step 2303.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:global_step/sec: 0.729987
+INFO:tensorflow:Recording summary at step 2740.
+INFO:tensorflow:global step 3000: loss = 0.6048 (1.989 sec/step)
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:global_step/sec: 0.483327
+INFO:tensorflow:Recording summary at step 3030.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:global_step/sec: 0.486671
+INFO:tensorflow:Recording summary at step 3323.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:global_step/sec: 0.486695
+INFO:tensorflow:Recording summary at step 3614.
+INFO:tensorflow:global step 4000: loss = 0.4258 (1.405 sec/step)
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 4019.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 4473.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 4929.
+INFO:tensorflow:global step 5000: loss = 0.3564 (1.270 sec/step)
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 5381.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 5836.
+INFO:tensorflow:global step 6000: loss = 0.4394 (1.336 sec/step)
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 6291.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 6745.
+INFO:tensorflow:global step 7000: loss = 0.7007 (1.224 sec/step)
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 7197.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 7650.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 7951.
+INFO:tensorflow:global step 8000: loss = 0.4867 (1.993 sec/step)
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 8236.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 8521.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 8811.
+INFO:tensorflow:global step 9000: loss = 0.5611 (1.923 sec/step)
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 9098.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 9387.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 9676.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 9968.
+INFO:tensorflow:global step 10000: loss = 0.4937 (1.874 sec/step)
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 10259.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 10548.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 10839.
+INFO:tensorflow:global step 11000: loss = 0.4176 (1.881 sec/step)
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 11129.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 11419.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 11707.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 11998.
+INFO:tensorflow:global step 12000: loss = 0.3065 (1.995 sec/step)
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 12289.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 12578.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 12868.
+INFO:tensorflow:global step 13000: loss = 0.2898 (2.171 sec/step)
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 13160.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 13450.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 13741.
+INFO:tensorflow:global step 14000: loss = 0.3040 (2.251 sec/step)
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 14033.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 14321.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 14613.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 14905.
+INFO:tensorflow:global step 15000: loss = 0.4183 (2.003 sec/step)
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 15197.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 15489.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 15778.
+INFO:tensorflow:global step 16000: loss = 0.6719 (2.192 sec/step)
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 16071.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 16362.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 16655.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 16949.
+INFO:tensorflow:global step 17000: loss = 0.3349 (2.043 sec/step)
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 17240.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 17532.
+INFO:tensorflow:Saving checkpoint to path mobilenet_v2_train_logs/early_stop_3600/model.ckpt
+INFO:tensorflow:Recording summary at step 17824.
+INFO:tensorflow:global step 18000: loss = 0.3145 (2.204 sec/step)
+INFO:tensorflow:Stopping Training.
+INFO:tensorflow:Finished training! Saving model to disk.

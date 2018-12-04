@@ -10,11 +10,11 @@ import cv2
 
 total = 0
 
-#得到不重复的标签
+#get unchongfu labels
 def get_label_dict(dataset_path):
     label_dict = {}
     idx = 0
-    fd = open("data/label_list_3600.txt", 'w')
+    fd = open("new_data/label_list_3600.txt", 'w')
     for label in os.listdir(dataset_path):
         if label == "._.DS_Store" or os.path.isfile(os.path.join(dataset_path, label)):
             continue
@@ -78,12 +78,17 @@ def dataset_split(list_path, train_list_path, val_list_path, label_dict):
 def convert_dataset_to_record(list_path, data_dir, output_dir, _NUM_SHARDS=5):
     fd = open(list_path)
     lines = [line.split() for line in fd]
+    
     fd.close()
     num_per_shard = int(math.ceil(len(lines) / float(_NUM_SHARDS)))
     with tf.Graph().as_default():
         decode_jpeg_data = tf.placeholder(dtype=tf.string)
         decode_jpeg = tf.image.decode_jpeg(decode_jpeg_data, channels=3)
-        with tf.Session('') as sess:
+        
+        config = tf.ConfigProto()
+        config.gpu_options.allow_growth = True
+
+        with tf.Session(config=config) as sess:
             for shard_id in range(_NUM_SHARDS):
                 output_path = os.path.join(output_dir,
                     'data_{:02}-of-{:02}.tfrecord'.format(shard_id, _NUM_SHARDS))
@@ -101,25 +106,30 @@ def convert_dataset_to_record(list_path, data_dir, output_dir, _NUM_SHARDS=5):
                         print(e)
                         continue
                     height, width = image.shape[0], image.shape[1]
+                    #print("test  "+str(lines[i]))
+                    '''example = dataset_utils.image_to_tfexample(
+                        image_data, b'jpg', height, width, int(lines[i][0]))'''
+                   
                     example = dataset_utils.image_to_tfexample(
-                        image_data, b'jpg', height, width, int(lines[i][1]))
+                        image_data, b'jpg', height, width, int(i))
+                    
                     tfrecord_writer.write(example.SerializeToString())
                 tfrecord_writer.close()
     sys.stdout.write('\n')
     sys.stdout.flush()
 
-print('-----------------------------------------------------------------------')
-#data_dir = "/home/lifeng/card_matching/full_img"
-data_dir = "/home/yy/PreResearch/photos"
-record_dir = "data/tf_record_3600"
-label_dict = get_label_dict(data_dir)
-print(len(label_dict))
-generate_label_name(data_dir, "data/list_3600.txt", label_dict)
-dataset_split("data/list_3600.txt", "data/list_train_3600.txt", "data/list_val_3600.txt", label_dict)
+record_dir = "new_data/tf_record_3600"
+data_dir = "/home/yy/PreResearch/photos_new/"
 
-train_record_dir = os.path.join(record_dir, 'train')
-# val_record_dir = os.path.join(record_dir, 'val')
+'''label_dict = get_label_dict(data_dir)
+print(len(label_dict))
+generate_label_name(data_dir, "new_data/list_3600.txt", label_dict)
+dataset_split("new_data/list_3600.txt", "new_data/list_train_3600.txt", "new_data/list_val_3600.txt", label_dict)'''
+
+'''train_record_dir = os.path.join(record_dir, 'train')
 os.system('mkdir -p ' + train_record_dir)
-# os.system('mkdir -p ' + val_record_dir)
-convert_dataset_to_record('data/list_train_3600.txt', data_dir, train_record_dir)
-# convert_dataset_to_record('data/list_val_3600.txt', data_dir, val_record_dir)
+convert_dataset_to_record('new_data/list_train_3600.txt', data_dir, train_record_dir)'''
+
+val_record_dir = os.path.join(record_dir, 'val')
+os.system('mkdir -p ' + val_record_dir)
+convert_dataset_to_record('new_data/list_val_3600.txt', data_dir, val_record_dir)

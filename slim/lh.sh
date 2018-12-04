@@ -1,0 +1,10 @@
+CUDA_VISIBLE_DEVICES='0,1' python3 train_image_classifier.py \
+                --max_number_of_steps=4200 \
+                --batch_size=64 \
+                --learning_rate=0.001 \
+                --end_learning_rate=0.00001 \
+                --save_interval_secs=3600 \
+                --save_summaries_secs=3600 \
+                --log_every_n_steps=50 \
+                --learning_rate_decay_type=fixed \
+                --optimizer=adam  > nmsl_v2.out 2>&1 &

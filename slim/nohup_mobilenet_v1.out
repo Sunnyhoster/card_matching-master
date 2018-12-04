@@ -1,4 +1,4 @@
-WARNING:tensorflow:From train_image_classifier.py:421: create_global_step (from tensorflow.contrib.framework.python.ops.variables) is deprecated and will be removed in a future version.
+WARNING:tensorflow:From train_image_classifier.py:422: create_global_step (from tensorflow.contrib.framework.python.ops.variables) is deprecated and will be removed in a future version.
 Instructions for updating:
 Please switch to tf.train.create_global_step
 WARNING:tensorflow:From /usr/local/share/py-venv/py2/local/lib/python2.7/site-packages/tensorflow/python/training/input.py:187: __init__ (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
@@ -7,7 +7,7 @@ To construct input pipelines, use the `tf.data` module.
 WARNING:tensorflow:From /usr/local/share/py-venv/py2/local/lib/python2.7/site-packages/tensorflow/python/training/input.py:187: add_queue_runner (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
 Instructions for updating:
 To construct input pipelines, use the `tf.data` module.
-WARNING:tensorflow:From train_image_classifier.py:489: softmax_cross_entropy (from tensorflow.contrib.losses.python.losses.loss_ops) is deprecated and will be removed after 2016-12-30.
+WARNING:tensorflow:From train_image_classifier.py:490: softmax_cross_entropy (from tensorflow.contrib.losses.python.losses.loss_ops) is deprecated and will be removed after 2016-12-30.
 Instructions for updating:
 Use tf.losses.softmax_cross_entropy instead. Note that the order of the logits and labels arguments has been changed.
 WARNING:tensorflow:From /usr/local/share/py-venv/py2/local/lib/python2.7/site-packages/tensorflow/contrib/losses/python/losses/loss_ops.py:398: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
@@ -24,269 +24,26 @@ Use tf.losses.compute_weighted_loss instead.
 WARNING:tensorflow:From /usr/local/share/py-venv/py2/local/lib/python2.7/site-packages/tensorflow/contrib/losses/python/losses/loss_ops.py:147: add_loss (from tensorflow.contrib.losses.python.losses.loss_ops) is deprecated and will be removed after 2016-12-30.
 Instructions for updating:
 Use tf.losses.add_loss instead.
-vars: 
-<tf.Variable 'MobilenetV1/Conv2d_0/weights:0' shape=(3, 3, 3, 32) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_0/BatchNorm/gamma:0' shape=(32,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_0/BatchNorm/beta:0' shape=(32,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_0/BatchNorm/moving_mean:0' shape=(32,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_0/BatchNorm/moving_variance:0' shape=(32,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_1_depthwise/depthwise_weights:0' shape=(3, 3, 32, 1) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_1_depthwise/BatchNorm/gamma:0' shape=(32,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_1_depthwise/BatchNorm/beta:0' shape=(32,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_1_depthwise/BatchNorm/moving_mean:0' shape=(32,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_1_depthwise/BatchNorm/moving_variance:0' shape=(32,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_1_pointwise/weights:0' shape=(1, 1, 32, 64) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_1_pointwise/BatchNorm/gamma:0' shape=(64,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_1_pointwise/BatchNorm/beta:0' shape=(64,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_1_pointwise/BatchNorm/moving_mean:0' shape=(64,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_1_pointwise/BatchNorm/moving_variance:0' shape=(64,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_2_depthwise/depthwise_weights:0' shape=(3, 3, 64, 1) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_2_depthwise/BatchNorm/gamma:0' shape=(64,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_2_depthwise/BatchNorm/beta:0' shape=(64,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_2_depthwise/BatchNorm/moving_mean:0' shape=(64,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_2_depthwise/BatchNorm/moving_variance:0' shape=(64,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_2_pointwise/weights:0' shape=(1, 1, 64, 128) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_2_pointwise/BatchNorm/gamma:0' shape=(128,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_2_pointwise/BatchNorm/beta:0' shape=(128,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_2_pointwise/BatchNorm/moving_mean:0' shape=(128,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_2_pointwise/BatchNorm/moving_variance:0' shape=(128,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_3_depthwise/depthwise_weights:0' shape=(3, 3, 128, 1) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_3_depthwise/BatchNorm/gamma:0' shape=(128,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_3_depthwise/BatchNorm/beta:0' shape=(128,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_3_depthwise/BatchNorm/moving_mean:0' shape=(128,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_3_depthwise/BatchNorm/moving_variance:0' shape=(128,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_3_pointwise/weights:0' shape=(1, 1, 128, 128) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_3_pointwise/BatchNorm/gamma:0' shape=(128,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_3_pointwise/BatchNorm/beta:0' shape=(128,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_3_pointwise/BatchNorm/moving_mean:0' shape=(128,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_3_pointwise/BatchNorm/moving_variance:0' shape=(128,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_4_depthwise/depthwise_weights:0' shape=(3, 3, 128, 1) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_4_depthwise/BatchNorm/gamma:0' shape=(128,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_4_depthwise/BatchNorm/beta:0' shape=(128,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_4_depthwise/BatchNorm/moving_mean:0' shape=(128,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_4_depthwise/BatchNorm/moving_variance:0' shape=(128,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_4_pointwise/weights:0' shape=(1, 1, 128, 256) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_4_pointwise/BatchNorm/gamma:0' shape=(256,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_4_pointwise/BatchNorm/beta:0' shape=(256,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_4_pointwise/BatchNorm/moving_mean:0' shape=(256,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_4_pointwise/BatchNorm/moving_variance:0' shape=(256,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_5_depthwise/depthwise_weights:0' shape=(3, 3, 256, 1) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_5_depthwise/BatchNorm/gamma:0' shape=(256,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_5_depthwise/BatchNorm/beta:0' shape=(256,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_5_depthwise/BatchNorm/moving_mean:0' shape=(256,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_5_depthwise/BatchNorm/moving_variance:0' shape=(256,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_5_pointwise/weights:0' shape=(1, 1, 256, 256) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_5_pointwise/BatchNorm/gamma:0' shape=(256,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_5_pointwise/BatchNorm/beta:0' shape=(256,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_5_pointwise/BatchNorm/moving_mean:0' shape=(256,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_5_pointwise/BatchNorm/moving_variance:0' shape=(256,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_6_depthwise/depthwise_weights:0' shape=(3, 3, 256, 1) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_6_depthwise/BatchNorm/gamma:0' shape=(256,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_6_depthwise/BatchNorm/beta:0' shape=(256,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_6_depthwise/BatchNorm/moving_mean:0' shape=(256,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_6_depthwise/BatchNorm/moving_variance:0' shape=(256,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_6_pointwise/weights:0' shape=(1, 1, 256, 512) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_6_pointwise/BatchNorm/gamma:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_6_pointwise/BatchNorm/beta:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_6_pointwise/BatchNorm/moving_mean:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_6_pointwise/BatchNorm/moving_variance:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_7_depthwise/depthwise_weights:0' shape=(3, 3, 512, 1) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_7_depthwise/BatchNorm/gamma:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_7_depthwise/BatchNorm/beta:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_7_depthwise/BatchNorm/moving_mean:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_7_depthwise/BatchNorm/moving_variance:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_7_pointwise/weights:0' shape=(1, 1, 512, 512) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_7_pointwise/BatchNorm/gamma:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_7_pointwise/BatchNorm/beta:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_7_pointwise/BatchNorm/moving_mean:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_7_pointwise/BatchNorm/moving_variance:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_8_depthwise/depthwise_weights:0' shape=(3, 3, 512, 1) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_8_depthwise/BatchNorm/gamma:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_8_depthwise/BatchNorm/beta:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_8_depthwise/BatchNorm/moving_mean:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_8_depthwise/BatchNorm/moving_variance:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_8_pointwise/weights:0' shape=(1, 1, 512, 512) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_8_pointwise/BatchNorm/gamma:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_8_pointwise/BatchNorm/beta:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_8_pointwise/BatchNorm/moving_mean:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_8_pointwise/BatchNorm/moving_variance:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_9_depthwise/depthwise_weights:0' shape=(3, 3, 512, 1) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_9_depthwise/BatchNorm/gamma:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_9_depthwise/BatchNorm/beta:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_9_depthwise/BatchNorm/moving_mean:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_9_depthwise/BatchNorm/moving_variance:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_9_pointwise/weights:0' shape=(1, 1, 512, 512) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_9_pointwise/BatchNorm/gamma:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_9_pointwise/BatchNorm/beta:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_9_pointwise/BatchNorm/moving_mean:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_9_pointwise/BatchNorm/moving_variance:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_10_depthwise/depthwise_weights:0' shape=(3, 3, 512, 1) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_10_depthwise/BatchNorm/gamma:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_10_depthwise/BatchNorm/beta:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_10_depthwise/BatchNorm/moving_mean:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_10_depthwise/BatchNorm/moving_variance:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_10_pointwise/weights:0' shape=(1, 1, 512, 512) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_10_pointwise/BatchNorm/gamma:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_10_pointwise/BatchNorm/beta:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_10_pointwise/BatchNorm/moving_mean:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_10_pointwise/BatchNorm/moving_variance:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_11_depthwise/depthwise_weights:0' shape=(3, 3, 512, 1) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_11_depthwise/BatchNorm/gamma:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_11_depthwise/BatchNorm/beta:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_11_depthwise/BatchNorm/moving_mean:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_11_depthwise/BatchNorm/moving_variance:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_11_pointwise/weights:0' shape=(1, 1, 512, 512) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_11_pointwise/BatchNorm/gamma:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_11_pointwise/BatchNorm/beta:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_11_pointwise/BatchNorm/moving_mean:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_11_pointwise/BatchNorm/moving_variance:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_12_depthwise/depthwise_weights:0' shape=(3, 3, 512, 1) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_12_depthwise/BatchNorm/gamma:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_12_depthwise/BatchNorm/beta:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_12_depthwise/BatchNorm/moving_mean:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_12_depthwise/BatchNorm/moving_variance:0' shape=(512,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_12_pointwise/weights:0' shape=(1, 1, 512, 1024) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_12_pointwise/BatchNorm/gamma:0' shape=(1024,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_12_pointwise/BatchNorm/beta:0' shape=(1024,) dtype=float32_ref>
-<tf.VariablINFO:tensorflow:Fine-tuning from /home/yy/PreResearch/TFmodels/mobilenet_v1/mobilenet_v1_1.0_224.ckpt
+INFO:tensorflow:Ignoring --checkpoint_path because a checkpoint already exists in mobilenet_v1_train_logs/early_stop_3600
 WARNING:tensorflow:From /usr/local/share/py-venv/py2/local/lib/python2.7/site-packages/tensorflow/contrib/slim/python/slim/learning.py:737: __init__ (from tensorflow.python.training.supervisor) is deprecated and will be removed in a future version.
 Instructions for updating:
 Please switch to tf.train.MonitoredTrainingSession
-2018-10-26 16:41:32.892315: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
-2018-10-26 16:41:34.056784: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:964] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
-2018-10-26 16:41:34.057240: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1411] Found device 0 with properties: 
+2018-11-21 22:26:33.129619: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2018-11-21 22:26:33.771998: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:964] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2018-11-21 22:26:33.772563: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1411] Found device 0 with properties: 
 name: GeForce GTX 1080 Ti major: 6 minor: 1 memoryClockRate(GHz): 1.607
-pciBusID: 0000:02:00.0
+pciBusID: 0000:01:00.0
 totalMemory: 10.91GiB freeMemory: 10.75GiB
-2018-10-26 16:41:34.057253: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1490] Adding visible gpu devices: 0
-2018-10-26 16:41:34.276156: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] Device interconnect StreamExecutor with strength 1 edge matrix:
-2018-10-26 16:41:34.276187: I tensorflow/core/common_runtime/gpu/gpu_device.cc:977]      0 
-2018-10-26 16:41:34.276193: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990] 0:   N 
-2018-10-26 16:41:34.276377: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1103] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10398 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:02:00.0, compute capability: 6.1)
-INFO:tensorflow:Restoring parameters from /home/yy/PreResearch/TFmodels/mobilenet_v1/mobilenet_v1_1.0_224.ckpt
+2018-11-21 22:26:33.772576: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1490] Adding visible gpu devices: 0
+2018-11-21 22:26:34.021781: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] Device interconnect StreamExecutor with strength 1 edge matrix:
+2018-11-21 22:26:34.021806: I tensorflow/core/common_runtime/gpu/gpu_device.cc:977]      0 
+2018-11-21 22:26:34.021812: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990] 0:   N 
+2018-11-21 22:26:34.022014: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1103] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10398 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:01:00.0, compute capability: 6.1)
+INFO:tensorflow:Restoring parameters from mobilenet_v1_train_logs/early_stop_3600/model.ckpt-18003
 INFO:tensorflow:Running local_init_op.
 INFO:tensorflow:Done running local_init_op.
 INFO:tensorflow:Starting Session.
 INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
 INFO:tensorflow:Starting Queues.
 INFO:tensorflow:global_step/sec: 0
-INFO:tensorflow:Recording summary at step 1.
-INFO:tensorflow:global_step/sec: 0.783756
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 472.
-INFO:tensorflow:global_step/sec: 0.784999
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 943.
-INFO:tensorflow:global step 1000: loss = 0.4214 (1.246 sec/step)
-INFO:tensorflow:global_step/sec: 0.785001
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 1415.
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:global_step/sec: 0.779988
-INFO:tensorflow:Recording summary at step 1883.
-INFO:tensorflow:global step 2000: loss = 0.3030 (1.257 sec/step)
-INFO:tensorflow:global_step/sec: 0.783346
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 2352.
-INFO:tensorflow:global_step/sec: 0.784999
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 2823.
-INFO:tensorflow:global step 3000: loss = 0.3123 (1.278 sec/step)
-INFO:tensorflow:global_step/sec: 0.785
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 3295.
-INFO:tensorflow:global_step/sec: 0.783334
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 3764.
-INFO:tensorflow:global step 4000: loss = 0.3221 (1.180 sec/step)
-INFO:tensorflow:global_step/sec: 0.785001
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 4235.
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 4705.
-INFO:tensorflow:global step 5000: loss = 0.3290 (1.243 sec/step)
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 5178.
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 5646.
-INFO:tensorflow:global step 6000: loss = 0.3419 (1.272 sec/step)
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 6115.
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 6578.
-INFO:tensorflow:global step 7000: loss = 0.2935 (1.259 sec/step)
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 7045.
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 7512.
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 7979.
-INFO:tensorflow:global step 8000: loss = 0.5625 (1.260 sec/step)
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 8447.
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 8913.
-INFO:tensorflow:global step 9000: loss = 0.4362 (1.260 sec/step)
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 9383.
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 9848.
-INFO:tensorflow:global step 10000: loss = 0.5436 (1.307 sec/step)
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 10315.
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 10781.
-INFO:tensorflow:global step 11000: loss = 0.4190 (1.232 sec/step)
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 11248.
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 11716.
-INFO:tensorflow:global step 12000: loss = 0.6517 (1.340 sec/step)
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 12184.
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 12651.
-INFO:tensorflow:global step 13000: loss = 0.3446 (1.189 sec/step)
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 13118.
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 13584.
-INFO:tensorflow:global step 14000: loss = 0.3036 (1.168 sec/step)
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 14050.
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 14519.
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 14986.
-INFO:tensorflow:global step 15000: loss = 0.4574 (1.244 sec/step)
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 15453.
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 15924.
-INFO:tensorflow:global step 16000: loss = 0.3042 (1.175 sec/step)
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 16390.
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 16859.
-INFO:tensorflow:global step 17000: loss = 0.2606 (1.250 sec/step)
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 17328.
-INFO:tensorflow:Saving checkpoint to path mobilenet_v1_train_logs/early_stop_3600/model.ckpt
-INFO:tensorflow:Recording summary at step 17797.
-INFO:tensorflow:global step 18000: loss = 0.5695 (1.229 sec/step)
-INFO:tensorflow:Stopping Training.
-INFO:tensorflow:Finished training! Saving model to disk.
-e 'MobilenetV1/Conv2d_12_pointwise/BatchNorm/moving_mean:0' shape=(1024,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_12_pointwise/BatchNorm/moving_variance:0' shape=(1024,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_13_depthwise/depthwise_weights:0' shape=(3, 3, 1024, 1) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_13_depthwise/BatchNorm/gamma:0' shape=(1024,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_13_depthwise/BatchNorm/beta:0' shape=(1024,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_13_depthwise/BatchNorm/moving_mean:0' shape=(1024,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_13_depthwise/BatchNorm/moving_variance:0' shape=(1024,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_13_pointwise/weights:0' shape=(1, 1, 1024, 1024) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_13_pointwise/BatchNorm/gamma:0' shape=(1024,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_13_pointwise/BatchNorm/beta:0' shape=(1024,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_13_pointwise/BatchNorm/moving_mean:0' shape=(1024,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Conv2d_13_pointwise/BatchNorm/moving_variance:0' shape=(1024,) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Logits/Conv2d_1c_1x1/weights:0' shape=(1, 1, 1024, 10) dtype=float32_ref>
-<tf.Variable 'MobilenetV1/Logits/Conv2d_1c_1x1/biases:0' shape=(10,) dtype=float32_ref>
+2018-11-21 22:26:40.411381: E tensorflow/stream_executor/cuda/cuda_dnn.cc:343] Loaded runtime CuDNN library: 7.0.5 but source was compiled with: 7.2.1.  CuDNN library major and minor version needs to match or have higher minor version in case of CuDNN 7.0 or later version. If using a binary install, upgrade your CuDNN library.  If building from sources, make sure the library loaded at runtime is compatible with the version specified during compile configuration.
